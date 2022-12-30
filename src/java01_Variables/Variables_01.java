@@ -5,7 +5,7 @@ package java01_Variables;
 //shift + home : 커서 기준 한 줄의 처음까지 선책
 
 
-public class Vriables_01 {
+public class Variables_01 {
 	public static void main(String[] args) {
 		
 //		System.out.println("동작테스트");
