@@ -28,18 +28,7 @@ public class IfQuiz_03 {
 			System.out.println("같은 값입니다");
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }
