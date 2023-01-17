@@ -2,7 +2,7 @@ package java09_api;
 
 import java.util.Objects;
 
-public class Point {
+public class Point implements Cloneable {
 
 	private int x;
 	private int y;
@@ -31,6 +31,8 @@ public class Point {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
 	//equals 
 //	@Override
 //	public boolean equals(Object obj) { //Object를 Point로 바꾸면 오버라이딩이 아닌 오버로드가 됨
@@ -54,15 +56,33 @@ public class Point {
 	//equals -> 자동완성
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) //동일성(Identity) 확인 / 객체의 참조값 확인
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (getClass() != obj.getClass()) //동등성(equality) 확인 / 객체의 클래스 정보 확인
 			return false;
 		Point other = (Point) obj;
 		return x == other.x && y == other.y;
 	}
+	
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//Point로 자동 형변환이 안된다는 에러가 떴으므로 형변환 해주기
+//	@Override
+//	protected Object clone() throws CloneNotSupportedException {
+//		// TODO Auto-generated method stub
+//		return super.clone();
+//	}
+	
+	@Override
+	protected Point clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return (Point)super.clone();
+	}
+	
+	
+	
 	
 
 	//게터, 세터

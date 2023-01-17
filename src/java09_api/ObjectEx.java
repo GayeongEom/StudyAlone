@@ -47,14 +47,59 @@ public class ObjectEx {
 		//	-> 객체의 값(인스턴스 변수 값)이 같은 값인지 비교
 		//	-> 개발자가 재정의하여 인스턴스 변수의 값을 비교하도록 수정하여 사용
 		System.out.println();
-		System.out.println("p2.equals(p3) : " + p2.equals(p3)); //false
+		System.out.println("p2.equals(p3) : " + p2.equals(p3)); //true
 		System.out.println("p2.equals(p4) : " + p2.equals(p4)); //true
 		
-		//p2.equals(p3) 호출코드
-		//
+		//---------------------------------------------------------------------
+		System.out.println();
+		System.out.println("----------hashCode()-------------");
+
+		System.out.println("p2 : " + p2.hashCode());
+		System.out.println("p3 : " + p3.hashCode());
+		System.out.println("p4 : " + p4.hashCode());
 		
+		System.out.println();
+		String s1 = new String("Apple");
+		String s2 = new String("Apple");
+		String s3 = new String("Banana");
+		String s4 = s1;
 		
+		System.out.println("s1==s2 : " + (s1==s2)); //false / 인스턴스 위치가 같은지 확인 -> 해시값 비교
+		System.out.println("s1.equals(s2) : " + s1.equals(s2)); //true / 동등성 비교
 		
+		System.out.println("s1 : " + s1.hashCode());
+		System.out.println("s2 : " + s2.hashCode());
+		System.out.println("s3 : " + s3.hashCode());
+		System.out.println("s4 : " + s4.hashCode());
+		//문자열에 대한 해시값 -> Apple끼리 같은 해시값을 가짐 / 동등할 경우 같은 해시값을 가지도록
+		
+		//---------------------------------------------------------------------
+		System.out.println();
+		System.out.println("----------clone()-------------");
+		
+		Point pOriginal = new Point(33,44);
+		
+		//얕은 복사 -> 참조값만 복사 / 한 인스턴스로 두 변수 참조
+		Point pClone1 = pOriginal;
+		
+		//깊은 복사
+		Point pClone2 = new Point(pOriginal.getX(), pOriginal.getY());
+		
+		//clone()을 이용한 깊은 복사
+		try {
+			
+			Point pClone3 = pOriginal.clone();
+		
+		} catch (CloneNotSupportedException e) {
+			
+			e.printStackTrace();
+		
+		} 
+		//Type mismatch: cannot convert from Object to Point ->  자동 형변환이 안된다는 경고
+		//Unhandled exception type CloneNotSupportedException -> 다루지 못하는 예외가 있다는 경고
+		
+		//예외를 없애주기 위해 try-catch 구문 사용
 		
 	}
+
 }
