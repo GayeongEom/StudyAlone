@@ -78,7 +78,7 @@ public class Collection_01_List {
 		if(null != l2) { //객체를 생성했는지 검사
 			if(!l2.isEmpty()) { //요소가 존재하는지 검사
 				
-				System.out.println(l1.get(0)); //현재 요소가 없으므로 코드가 진행되지 않음
+				System.out.println(l2.get(0)); //현재 요소가 없으므로 코드가 진행되지 않음
 				
 			}
 		}
