@@ -32,13 +32,13 @@ public class Collection_06_Properties {
 
 		System.out.println("--------------------------------");		
 
-		//파일 출력 스트림 객체
+//		//파일 출력 스트림 객체
 //		FileWriter writer = null;
 //		//System.out (모니터 출력)과 같은 역할
 //		
 //		try {
 //			
-//			//파일 출력 스트림 생성(파일이 없으면 파일을 생성함)
+//			//파일 출력 스트림 생성
 //			writer = new FileWriter("D:\\eclipse-workspace\\JavaBasic\\src\\java10_collection\\user.properties"); //이 위치에 파일을 자동 생성
 //		
 //			//Properties 객체의 데이터를 파일로 출력(파일로 저장)
@@ -57,7 +57,7 @@ public class Collection_06_Properties {
 		
 		
 		try {
-			FileWriter fw = new FileWriter("D:\\eclipse-workspace\\StudyAtHome\\src\\java10_collection");
+			FileWriter fw = new FileWriter("D:\\eclipse-workspace\\StudyAtHome\\src\\java10_collection\\test"); //파일이 없으면 파일을 생성함
 			
 			//생성한 파일객체의 데이터를 파일로 출력(저장)
 			propt.store(fw, "comment : studt again");
@@ -93,14 +93,13 @@ public class Collection_06_Properties {
 
 		//---------------------------------------------------------------
 		
-		FileReader read = null;
+//		FileReader read = null;
 		
-		Properties again = new Properties();
 		
 		try {
-			read = new FileReader("D:\\eclipse-workspace\\StudyAtHome\\src\\java10_collection");
+			FileReader read = new FileReader("D:\\eclipse-workspace\\StudyAtHome\\src\\java10_collection\\test");
 			
-			again.load(read);
+			propt.load(read);
 		
 		} catch (FileNotFoundException e) {
 		
@@ -110,7 +109,7 @@ public class Collection_06_Properties {
 			e.printStackTrace();
 		}
 		
-		System.out.println(again);
+		System.out.println(propt);
 		
 		
 		//---------------------------------------------------------------

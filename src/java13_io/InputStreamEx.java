@@ -36,7 +36,7 @@ public class InputStreamEx {
 		try {
 			System.out.println("<<입력 대기중>>");
 			
-			while( (len = is.read(buf)) != -1 ) { //더이상 읽어들일 데이터가 없으면 -1이 됨 //첫 입력ㅇㄹ 받아들이는 시작
+			while( (len = is.read(buf)) != -1 ) { //더이상 읽어들일 데이터가 없으면 -1이 됨 //첫 입력을 받아들이는 시작
 				
 				//입력받은 데이터 byte[]을 String으로 변환
 				String data = new String(buf,0,len);
