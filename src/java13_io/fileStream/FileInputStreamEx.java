@@ -62,6 +62,8 @@ public class FileInputStreamEx {
 		
 		//-------------------------------------------------------------------------------
 		
+		//객체선언을 따로 하는 것은 좋지 않음 -> try의 () 괄호 안에다가
+		
 //		FileInputStream fis = null;
 //		
 //		try {
@@ -78,10 +80,6 @@ public class FileInputStreamEx {
 //			}
 //			
 //		}
-		
-		
-		
-		
 		
 	}
 
